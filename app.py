@@ -26,8 +26,8 @@ IM_SIZE = (720, 1280)
 
 @st.cache_resource
 def load_model():
-    model = pickle.load(open('aod_net_fog_v2.sav', 'rb'))
-    # model = tf.keras.models.load_model('aod_net_fog_v2.h5')
+    # model = pickle.load(open('aod_net_fog_v2.sav', 'rb'))
+    model = tf.keras.models.load_model('aod_net_fog_v2.h5')
     return model
 
 
