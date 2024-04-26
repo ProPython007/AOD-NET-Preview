@@ -1,4 +1,3 @@
-from keras.models import load_model
 import tensorflow as tf
 import streamlit as st
 from PIL import Image
@@ -26,7 +25,7 @@ IM_SIZE = (720, 1280)
 
 @st.cache_resource
 def load_model():
-    model = load_model('aod_net_fog_v2.h5')
+    model = tf.keras.models.load_model('aod_net_fog_v2.h5')
     return model
 
 
