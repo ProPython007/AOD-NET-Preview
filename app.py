@@ -62,7 +62,7 @@ col1, col2 = st.columns(2)
 
 with col1:
     st.subheader('Input Image:')
-    uploadFile = st.file_uploader(label=" ", type=['jpg', 'png'])
+    uploadFile = st.file_uploader(label=" ", type=['jpg'])
     if uploadFile is not None:
         img = load_image(uploadFile)
         st.image(img)
