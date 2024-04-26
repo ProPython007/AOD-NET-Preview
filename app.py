@@ -2,6 +2,7 @@ import tensorflow as tf
 import streamlit as st
 from PIL import Image
 import numpy as np
+from tensorflow.keras.utils import custom_object_scope
 
 
 
@@ -25,7 +26,8 @@ IM_SIZE = (720, 1280)
 
 @st.cache_resource
 def load_model():
-    model = tf.keras.models.load_model('aod_net_fog_v2.h5')
+    with custom_object_scope({'TFOpLambda': TFOpLambda}):
+        model = tf.keras.models.load_model('aod_net_fog_v2.h5')
     return model
 
 
